@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QuickTalk — 10s Voice & Video</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>QuickTalk</h1>
+      <div id="user-area">
+        <button id="sign-in-btn" class="btn">Sign In</button>
+        <button id="sign-out-btn" class="btn" style="display:none">Sign Out</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="recorder">
+        <p class="section-title">🎤 Record a 10-second clip</p>
+        <video id="preview" autoplay muted playsinline class="preview-video"></video>
+        <div class="buttons">
+          <button id="start-btn" class="btn btn-primary">Start Recording</button>
+          <button id="stop-btn" class="btn btn-secondary" disabled>Stop</button>
+        </div>
+        <div id="timer" class="timer">00:00</div>
+      </section>
+
+      <section id="feed">
+        <h2 class="section-title">📬 Feed (last 24h)</h2>
+        <div id="posts" class="feed-container"></div>
+      </section>
+    </main>
+
+    <footer>
+      <small>QuickTalk MVP — 10s clips. Built for testing.</small>
+    </footer>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
+
+  <script src="firebase-config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
